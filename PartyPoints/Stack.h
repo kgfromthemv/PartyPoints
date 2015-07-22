@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 Kyle Grieder. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+@import CoreData;
 
-@interface Stack : NSManagedObject
+@interface Stack : NSObject
+
++ (Stack *)sharedInstance;
+
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 
 @end

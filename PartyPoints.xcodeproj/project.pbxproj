@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		274037131B5F3A2E00E762B8 /* PPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037121B5F3A2E00E762B8 /* PPLoginViewController.m */; };
+		274037171B5F3A6A00E762B8 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037161B5F3A6A00E762B8 /* PPHomeViewController.m */; };
+		2740371A1B5F3B0500E762B8 /* PPCreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037191B5F3B0500E762B8 /* PPCreatePartyViewController.m */; };
+		2740371E1B5F3B4500E762B8 /* PPPartyNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740371D1B5F3B4500E762B8 /* PPPartyNameViewController.m */; };
+		274037211B5F3B5500E762B8 /* PPPartyIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037201B5F3B5500E762B8 /* PPPartyIconViewController.m */; };
+		274037241B5F3B7200E762B8 /* PPPartyDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037231B5F3B7200E762B8 /* PPPartyDateViewController.m */; };
+		274037271B5F3B9600E762B8 /* PPPartyGuestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037261B5F3B9600E762B8 /* PPPartyGuestsViewController.m */; };
+		2740372A1B5F3BA200E762B8 /* PPPartyGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037291B5F3BA200E762B8 /* PPPartyGamesViewController.m */; };
+		2740372D1B5F3C2300E762B8 /* PPPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740372C1B5F3C2300E762B8 /* PPPartyTableViewController.m */; };
+		274037311B5F3CCC00E762B8 /* PPGuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037301B5F3CCC00E762B8 /* PPGuestTableViewController.m */; };
+		274037341B5F3CEA00E762B8 /* PPEditPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037331B5F3CEA00E762B8 /* PPEditPartyTableViewController.m */; };
+		274037371B5F3D8E00E762B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274037351B5F3D8E00E762B8 /* Model.xcdatamodeld */; };
+		2740373A1B5F3DA600E762B8 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 274037391B5F3DA600E762B8 /* Stack.m */; };
 		277F79981B589B3E00AD1955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F79971B589B3E00AD1955 /* main.m */; };
 		277F799B1B589B3E00AD1955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F799A1B589B3E00AD1955 /* AppDelegate.m */; };
-		277F799E1B589B3E00AD1955 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F799D1B589B3E00AD1955 /* ViewController.m */; };
 		277F79A11B589B3E00AD1955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F799F1B589B3E00AD1955 /* Main.storyboard */; };
 		277F79A31B589B3E00AD1955 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277F79A21B589B3E00AD1955 /* Images.xcassets */; };
 		277F79A61B589B3E00AD1955 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277F79A41B589B3E00AD1955 /* LaunchScreen.xib */; };
@@ -27,13 +39,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		274037111B5F3A2E00E762B8 /* PPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLoginViewController.h; sourceTree = "<group>"; };
+		274037121B5F3A2E00E762B8 /* PPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLoginViewController.m; sourceTree = "<group>"; };
+		274037151B5F3A6A00E762B8 /* PPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeViewController.h; sourceTree = "<group>"; };
+		274037161B5F3A6A00E762B8 /* PPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeViewController.m; sourceTree = "<group>"; };
+		274037181B5F3B0500E762B8 /* PPCreatePartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCreatePartyViewController.h; sourceTree = "<group>"; };
+		274037191B5F3B0500E762B8 /* PPCreatePartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCreatePartyViewController.m; sourceTree = "<group>"; };
+		2740371C1B5F3B4500E762B8 /* PPPartyNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyNameViewController.h; sourceTree = "<group>"; };
+		2740371D1B5F3B4500E762B8 /* PPPartyNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyNameViewController.m; sourceTree = "<group>"; };
+		2740371F1B5F3B5500E762B8 /* PPPartyIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPartyIconViewController.h; path = ../PPPartyIconViewController.h; sourceTree = "<group>"; };
+		274037201B5F3B5500E762B8 /* PPPartyIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPartyIconViewController.m; path = ../PPPartyIconViewController.m; sourceTree = "<group>"; };
+		274037221B5F3B7200E762B8 /* PPPartyDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyDateViewController.h; sourceTree = "<group>"; };
+		274037231B5F3B7200E762B8 /* PPPartyDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyDateViewController.m; sourceTree = "<group>"; };
+		274037251B5F3B9600E762B8 /* PPPartyGuestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyGuestsViewController.h; sourceTree = "<group>"; };
+		274037261B5F3B9600E762B8 /* PPPartyGuestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyGuestsViewController.m; sourceTree = "<group>"; };
+		274037281B5F3BA200E762B8 /* PPPartyGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPartyGamesViewController.h; path = ../PPPartyGamesViewController.h; sourceTree = "<group>"; };
+		274037291B5F3BA200E762B8 /* PPPartyGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPartyGamesViewController.m; path = ../PPPartyGamesViewController.m; sourceTree = "<group>"; };
+		2740372B1B5F3C2300E762B8 /* PPPartyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyTableViewController.h; sourceTree = "<group>"; };
+		2740372C1B5F3C2300E762B8 /* PPPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyTableViewController.m; sourceTree = "<group>"; };
+		2740372F1B5F3CCC00E762B8 /* PPGuestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPGuestTableViewController.h; sourceTree = "<group>"; };
+		274037301B5F3CCC00E762B8 /* PPGuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPGuestTableViewController.m; sourceTree = "<group>"; };
+		274037321B5F3CEA00E762B8 /* PPEditPartyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPEditPartyTableViewController.h; sourceTree = "<group>"; };
+		274037331B5F3CEA00E762B8 /* PPEditPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPEditPartyTableViewController.m; sourceTree = "<group>"; };
+		274037361B5F3D8E00E762B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		274037381B5F3DA600E762B8 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		274037391B5F3DA600E762B8 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		277F79921B589B3E00AD1955 /* PartyPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277F79961B589B3E00AD1955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277F79971B589B3E00AD1955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		277F79991B589B3E00AD1955 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		277F799A1B589B3E00AD1955 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		277F799C1B589B3E00AD1955 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		277F799D1B589B3E00AD1955 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		277F79A01B589B3E00AD1955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		277F79A21B589B3E00AD1955 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		277F79A51B589B3E00AD1955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,6 +95,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		274037141B5F3A4600E762B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				274037111B5F3A2E00E762B8 /* PPLoginViewController.h */,
+				274037121B5F3A2E00E762B8 /* PPLoginViewController.m */,
+				274037151B5F3A6A00E762B8 /* PPHomeViewController.h */,
+				274037161B5F3A6A00E762B8 /* PPHomeViewController.m */,
+				2740371B1B5F3B0F00E762B8 /* Create Party Views */,
+				2740372E1B5F3C2800E762B8 /* Party Views */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2740371B1B5F3B0F00E762B8 /* Create Party Views */ = {
+			isa = PBXGroup;
+			children = (
+				274037181B5F3B0500E762B8 /* PPCreatePartyViewController.h */,
+				274037191B5F3B0500E762B8 /* PPCreatePartyViewController.m */,
+				2740371C1B5F3B4500E762B8 /* PPPartyNameViewController.h */,
+				2740371D1B5F3B4500E762B8 /* PPPartyNameViewController.m */,
+				2740371F1B5F3B5500E762B8 /* PPPartyIconViewController.h */,
+				274037201B5F3B5500E762B8 /* PPPartyIconViewController.m */,
+				274037221B5F3B7200E762B8 /* PPPartyDateViewController.h */,
+				274037231B5F3B7200E762B8 /* PPPartyDateViewController.m */,
+				274037251B5F3B9600E762B8 /* PPPartyGuestsViewController.h */,
+				274037261B5F3B9600E762B8 /* PPPartyGuestsViewController.m */,
+				274037281B5F3BA200E762B8 /* PPPartyGamesViewController.h */,
+				274037291B5F3BA200E762B8 /* PPPartyGamesViewController.m */,
+			);
+			name = "Create Party Views";
+			sourceTree = "<group>";
+		};
+		2740372E1B5F3C2800E762B8 /* Party Views */ = {
+			isa = PBXGroup;
+			children = (
+				2740372B1B5F3C2300E762B8 /* PPPartyTableViewController.h */,
+				2740372C1B5F3C2300E762B8 /* PPPartyTableViewController.m */,
+				2740372F1B5F3CCC00E762B8 /* PPGuestTableViewController.h */,
+				274037301B5F3CCC00E762B8 /* PPGuestTableViewController.m */,
+				274037321B5F3CEA00E762B8 /* PPEditPartyTableViewController.h */,
+				274037331B5F3CEA00E762B8 /* PPEditPartyTableViewController.m */,
+			);
+			name = "Party Views";
+			sourceTree = "<group>";
+		};
 		277F79891B589B3E00AD1955 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +163,11 @@
 			children = (
 				277F79991B589B3E00AD1955 /* AppDelegate.h */,
 				277F799A1B589B3E00AD1955 /* AppDelegate.m */,
-				277F799C1B589B3E00AD1955 /* ViewController.h */,
-				277F799D1B589B3E00AD1955 /* ViewController.m */,
+				274037141B5F3A4600E762B8 /* Views */,
 				277F799F1B589B3E00AD1955 /* Main.storyboard */,
+				274037351B5F3D8E00E762B8 /* Model.xcdatamodeld */,
+				274037381B5F3DA600E762B8 /* Stack.h */,
+				274037391B5F3DA600E762B8 /* Stack.m */,
 				277F79A21B589B3E00AD1955 /* Images.xcassets */,
 				277F79A41B589B3E00AD1955 /* LaunchScreen.xib */,
 				277F79951B589B3E00AD1955 /* Supporting Files */,
@@ -219,9 +301,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277F799E1B589B3E00AD1955 /* ViewController.m in Sources */,
 				277F799B1B589B3E00AD1955 /* AppDelegate.m in Sources */,
+				2740372A1B5F3BA200E762B8 /* PPPartyGamesViewController.m in Sources */,
+				274037311B5F3CCC00E762B8 /* PPGuestTableViewController.m in Sources */,
+				2740373A1B5F3DA600E762B8 /* Stack.m in Sources */,
+				274037371B5F3D8E00E762B8 /* Model.xcdatamodeld in Sources */,
+				274037171B5F3A6A00E762B8 /* PPHomeViewController.m in Sources */,
+				274037271B5F3B9600E762B8 /* PPPartyGuestsViewController.m in Sources */,
+				2740371E1B5F3B4500E762B8 /* PPPartyNameViewController.m in Sources */,
+				2740372D1B5F3C2300E762B8 /* PPPartyTableViewController.m in Sources */,
+				274037241B5F3B7200E762B8 /* PPPartyDateViewController.m in Sources */,
+				274037211B5F3B5500E762B8 /* PPPartyIconViewController.m in Sources */,
 				277F79981B589B3E00AD1955 /* main.m in Sources */,
+				274037131B5F3A2E00E762B8 /* PPLoginViewController.m in Sources */,
+				2740371A1B5F3B0500E762B8 /* PPCreatePartyViewController.m in Sources */,
+				274037341B5F3CEA00E762B8 /* PPEditPartyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +512,7 @@
 				277F79B71B589B3E00AD1955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		277F79B81B589B3E00AD1955 /* Build configuration list for PBXNativeTarget "PartyPointsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,8 +521,22 @@
 				277F79BA1B589B3E00AD1955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		274037351B5F3D8E00E762B8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				274037361B5F3D8E00E762B8 /* Model.xcdatamodel */,
+			);
+			currentVersion = 274037361B5F3D8E00E762B8 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 277F798A1B589B3E00AD1955 /* Project object */;
 }
