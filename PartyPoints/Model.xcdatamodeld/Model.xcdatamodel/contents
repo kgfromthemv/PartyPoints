@@ -11,7 +11,7 @@
         <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Party" inverseName="guests" inverseEntity="Party" syncable="YES"/>
     </entity>
     <entity name="Icon" representedClassName="Icon" syncable="YES">
-        <attribute name="image" optional="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Party" inverseName="icons" inverseEntity="Party" syncable="YES"/>
     </entity>
     <entity name="Party" representedClassName="Party" syncable="YES">
@@ -33,8 +33,8 @@
     <elements>
         <element name="Game" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="Guest" positionX="-54" positionY="36" width="128" height="90"/>
+        <element name="Icon" positionX="-45" positionY="54" width="128" height="75"/>
         <element name="Party" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="User" positionX="-18" positionY="54" width="128" height="90"/>
-        <element name="Icon" positionX="-45" positionY="54" width="128" height="75"/>
     </elements>
 </model>

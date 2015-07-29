@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPPartyNameViewController : UIViewController
+@interface PPPartyNameViewController : UIViewController <UITextFieldDelegate>
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
 @end

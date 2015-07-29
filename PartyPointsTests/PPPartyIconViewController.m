@@ -1,41 +1,27 @@
 //
-//  PPPartyNameViewController.m
+//  PPPartyIconViewController.m
 //  PartyPoints
 //
 //  Created by Kyle Grieder on 7/21/15.
 //  Copyright (c) 2015 Kyle Grieder. All rights reserved.
 //
 
-#import "PPPartyNameViewController.h"
+#import "PPPartyIconViewController.h"
 
-
-@interface PPPartyNameViewController ()
-
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@interface PPPartyIconViewController ()
 
 @end
 
-@implementation PPPartyNameViewController
+@implementation PPPartyIconViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.textField.delegate = self;
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [[self.view window] endEditing:YES];
-    
-    return YES;
-    
 }
 
 /*
