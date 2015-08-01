@@ -215,10 +215,10 @@
 		27AB464F1B6414E6000CAC3F /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
-				27AB46241B641052000CAC3F /* PPHomeViewController.h */,
-				27AB46331B641052000CAC3F /* PPHomeViewController.m */,
 				27AB46251B641052000CAC3F /* PPLoginViewController.h */,
 				27AB46341B641052000CAC3F /* PPLoginViewController.m */,
+				27AB46241B641052000CAC3F /* PPHomeViewController.h */,
+				27AB46331B641052000CAC3F /* PPHomeViewController.m */,
 			);
 			name = "Main Views";
 			sourceTree = "<group>";

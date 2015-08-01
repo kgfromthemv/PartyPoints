@@ -7,7 +7,7 @@
 //
 
 #import "PPPartyGuestsViewController.h"
-
+#import "PartyController.h"
 @interface PPPartyGuestsViewController ()
 
 @end

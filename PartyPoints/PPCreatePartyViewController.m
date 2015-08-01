@@ -7,6 +7,8 @@
 //
 
 #import "PPCreatePartyViewController.h"
+#import "PartyController.h"
+#import "Stack.h"
 
 @interface PPCreatePartyViewController ()
 
@@ -23,11 +25,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)createParty:(id)sender {
     
+- (void)viewWillAppear:(BOOL)animated {
     
-    
+    [[Stack sharedInstance] resetManagedObjectContext];
 }
+
 
 /*
 #pragma mark - Navigation

@@ -12,6 +12,8 @@
 @interface Stack : NSObject
 
 + (Stack *)sharedInstance;
+- (void)resetManagedObjectContext;
+
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 

@@ -11,5 +11,7 @@
 
 @interface PartyController : NSObject
 
++ (PartyController *)sharedInstance;
++ (Party *)createPartyWithName:(NSString *)name;
 
 @end

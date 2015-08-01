@@ -7,8 +7,11 @@
 //
 
 #import "PPPartyIconViewController.h"
+#import "PartyController.h"
 
 @interface PPPartyIconViewController ()
+
+@property (strong, nonatomic) Party *party;
 
 @end
 

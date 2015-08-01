@@ -68,4 +68,9 @@
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
 }
 
+- (void)resetManagedObjectContext {
+    
+    [self.managedObjectContext reset];
+}
+
 @end
