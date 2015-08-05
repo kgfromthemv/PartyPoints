@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSDate * endTime;
 @property (nonatomic, retain) NSString * gamesList;
 @property (nonatomic, retain) NSString * guestList;
-@property (nonatomic, retain) NSString * icon;
+@property (nonatomic, retain) NSData * icon;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSSet *games;

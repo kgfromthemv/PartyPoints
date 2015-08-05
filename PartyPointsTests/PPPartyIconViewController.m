@@ -7,11 +7,11 @@
 //
 
 #import "PPPartyIconViewController.h"
-#import "PartyController.h"
+#import "PPPartyDateViewController.h"
+
 
 @interface PPPartyIconViewController ()
-
-@property (strong, nonatomic) Party *party;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 
 @end
 
@@ -27,14 +27,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (Party *)updateParty {
+    
+    UIImage *image = self.icon.image;
+    
+    NSData *imageAsData = UIImageJPEGRepresentation(image, 0.0);
+    
+    self.party.icon = imageAsData;
+    
+    return self.party;
+    
+    
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NSError *error;
+    if (!error) {
+        
+        PPPartyDateViewController *viewController = segue.destinationViewController;
+        
+        viewController.party = [self updateParty];
+        
+    } else {
+        
+        NSLog(@"There has been an error:%@", error);
+        
+    }
+    
 }
-*/
+
 
 @end

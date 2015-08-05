@@ -7,7 +7,7 @@
 //
 
 #import "PPPartyNameViewController.h"
-#import "PartyController.h"
+#import "PPPartyIconViewController.h"
 
 @interface PPPartyNameViewController ()
 
@@ -63,7 +63,10 @@
         [self createParty];
     }
     
-    [segue destinationViewController].party = self.party;
+    PPPartyIconViewController *viewController = segue.destinationViewController;
+    
+    viewController.party = self.party;
+    
     
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		271B18E11B61E98600395FC2 /* PPPartyGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271B18DF1B61E98600395FC2 /* PPPartyGamesViewController.m */; };
 		271B18E21B61E98600395FC2 /* PPPartyIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271B18E01B61E98600395FC2 /* PPPartyIconViewController.m */; };
+		272800581B71968D00CF784F /* PPPartyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272800571B71968D00CF784F /* PPPartyListTableViewController.m */; };
 		277F79981B589B3E00AD1955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F79971B589B3E00AD1955 /* main.m */; };
 		277F799B1B589B3E00AD1955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F799A1B589B3E00AD1955 /* AppDelegate.m */; };
 		277F79A11B589B3E00AD1955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F799F1B589B3E00AD1955 /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		271B18DE1B61E98600395FC2 /* PPPartyIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPartyIconViewController.h; path = PartyPointsTests/PPPartyIconViewController.h; sourceTree = SOURCE_ROOT; };
 		271B18DF1B61E98600395FC2 /* PPPartyGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPartyGamesViewController.m; path = PartyPointsTests/PPPartyGamesViewController.m; sourceTree = SOURCE_ROOT; };
 		271B18E01B61E98600395FC2 /* PPPartyIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPartyIconViewController.m; path = PartyPointsTests/PPPartyIconViewController.m; sourceTree = SOURCE_ROOT; };
+		272800561B71968D00CF784F /* PPPartyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyListTableViewController.h; sourceTree = "<group>"; };
+		272800571B71968D00CF784F /* PPPartyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyListTableViewController.m; sourceTree = "<group>"; };
 		277F79921B589B3E00AD1955 /* PartyPoints.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyPoints.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277F79961B589B3E00AD1955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277F79971B589B3E00AD1955 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 		27AB46511B642B85000CAC3F /* View Party */ = {
 			isa = PBXGroup;
 			children = (
+				272800561B71968D00CF784F /* PPPartyListTableViewController.h */,
+				272800571B71968D00CF784F /* PPPartyListTableViewController.m */,
 				27AB46291B641052000CAC3F /* PPPartyTableViewController.h */,
 				27AB46381B641052000CAC3F /* PPPartyTableViewController.m */,
 				27AB46231B641052000CAC3F /* PPGuestTableViewController.h */,
@@ -395,6 +400,7 @@
 				271B18E21B61E98600395FC2 /* PPPartyIconViewController.m in Sources */,
 				271B18E11B61E98600395FC2 /* PPPartyGamesViewController.m in Sources */,
 				27AB46411B641052000CAC3F /* PPCreatePartyViewController.m in Sources */,
+				272800581B71968D00CF784F /* PPPartyListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

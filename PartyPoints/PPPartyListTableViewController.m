@@ -1,18 +1,18 @@
 //
-//  PPEditPartyTableViewController.m
+//  PPPartyListTableViewController.m
 //  PartyPoints
 //
-//  Created by Kyle Grieder on 7/21/15.
+//  Created by Kyle Grieder on 8/4/15.
 //  Copyright (c) 2015 Kyle Grieder. All rights reserved.
 //
 
-#import "PPEditPartyTableViewController.h"
+#import "PPPartyListTableViewController.h"
 
-@interface PPEditPartyTableViewController ()
+@interface PPPartyListTableViewController ()
 
 @end
 
-@implementation PPEditPartyTableViewController
+@implementation PPPartyListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

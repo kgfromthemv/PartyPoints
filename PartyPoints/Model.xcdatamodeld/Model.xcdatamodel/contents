@@ -18,7 +18,7 @@
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="gamesList" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="guestList" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="parties" inverseEntity="Game" syncable="YES"/>

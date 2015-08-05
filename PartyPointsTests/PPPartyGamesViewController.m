@@ -7,7 +7,6 @@
 //
 
 #import "PPPartyGamesViewController.h"
-#import "PartyController.h"
 #import "PPPartyTableViewController.h"
 
 @interface PPPartyGamesViewController ()
@@ -27,14 +26,14 @@
 }
 
 - (IBAction)createParty:(id)sender {
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     
-    PPPartyTableViewController *partyTable = [board instantiateViewControllerWithIdentifier:NSStringFromClass([PPPartyTableViewController class])];
-    partyTable.party = self.party;
-    
-    NSArray *newViewControllerStack = @[mainScreen, partyList, partyTable];
-    [self.navigationController setViewControllers:newViewControllerStack animated:YES];
+//    PPPartyTableViewController *partyTable = [board instantiateViewControllerWithIdentifier:NSStringFromClass([PPPartyTableViewController class])];
+//    partyTable.party = self.party;
+//    
+//    NSArray *newViewControllerStack = @[mainScreen, partyList, partyTable];
+//    [self.navigationController setViewControllers:newViewControllerStack animated:YES];
 }
 
 /*

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PartyController.h"
 
 @interface PPPartyGuestsViewController : UIViewController
+
+@property (strong, nonatomic) Party *party;
 
 @end

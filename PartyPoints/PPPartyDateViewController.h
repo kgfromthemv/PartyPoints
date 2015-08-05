@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PartyController.h"
 
-@interface PPPartyDateViewController : UIViewController
+@interface PPPartyDateViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) Party *party;
 
 @end
