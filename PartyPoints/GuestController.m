@@ -20,11 +20,14 @@
     return sharedInstance;
 }
 
-+ (Guest *)createGuestWithName:(NSString *)name {
++ (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party {
     
     Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
     guest.name = name;
+    //guest.parties = party;
+
+
     
     return guest;
 }

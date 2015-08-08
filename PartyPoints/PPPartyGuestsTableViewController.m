@@ -13,7 +13,7 @@ static NSString *guestName = @"guestName";
 
 @interface PPPartyGuestsTableViewController ()
 
-@property NSMutableArray *guestList;
+@property NSArray *guestList;
 @property Guest *guest;
 @property (weak, nonatomic) IBOutlet UITextField *guestName;
 
@@ -27,8 +27,7 @@ static NSString *guestName = @"guestName";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.guestList = nil;
-    self.guest = [GuestController createGuestWithName:nil];
+    self.guest = [GuestController createGuestWithName:nil andParty:self.party];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,12 +42,15 @@ static NSString *guestName = @"guestName";
 }
 - (IBAction)addGuest:(id)sender {
     
+    NSMutableArray *list = [NSMutableArray arrayWithArray:self.guestList];
     NSString *name = self.guestName.text;
     
     Guest *guest = self.guest;
     guest.name = name;
 
-    [self.guestList addObject:guest];
+    [list addObject:guest];
+    
+    self.guestList = list;
     
     [self.tableView reloadData];
     
@@ -80,9 +82,9 @@ static NSString *guestName = @"guestName";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell];
     
-    Guest *guest  = self.guestList[indexPath.row];
+    self.guest  = self.guestList[indexPath.row];
 
-    cell.textLabel.text = guest.name;
+    cell.textLabel.text = self.guest.name;
     
     return cell;
 }

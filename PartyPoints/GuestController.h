@@ -12,7 +12,7 @@
 @interface GuestController : NSObject
 
 + (GuestController *)sharedInstance;
-+ (Guest *)createGuestWithName:(NSString *)name;
++ (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party; 
 
 
 
