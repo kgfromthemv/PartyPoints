@@ -8,7 +8,14 @@
 
 #import "PPPartyGuestsTableViewController.h"
 
+static NSString *tableViewCell = @"guestTableViewCell";
+static NSString *guestName = @"guestName";
+
 @interface PPPartyGuestsTableViewController ()
+
+@property NSMutableArray *guestList;
+@property Guest *guest;
+@property (weak, nonatomic) IBOutlet UITextField *guestName;
 
 @end
 
@@ -17,51 +24,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    self.guestList = nil;
+    self.guest = [GuestController createGuestWithName:nil];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)addGuest:(id)sender {
+    
+    NSString *name = self.guestName.text;
+    
+    Guest *guest = self.guest;
+    guest.name = name;
 
-#pragma mark - Table view data source
+    [self.guestList addObject:guest];
+    
+    [self.tableView reloadData];
+    
+}
+
+#pragma mark - Table view data source and delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self.guestName resignFirstResponder];
+    return YES;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return self.guestList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell];
+    
+    Guest *guest  = self.guestList[indexPath.row];
+
+    cell.textLabel.text = guest.name;
     
     return cell;
 }
-*/
 
-/*
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -71,7 +106,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -87,7 +122,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,6 +130,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

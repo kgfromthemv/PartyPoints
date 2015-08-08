@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Guest.h"
 
 @interface GuestController : NSObject
+
++ (GuestController *)sharedInstance;
++ (Guest *)createGuestWithName:(NSString *)name;
+
+
 
 @end

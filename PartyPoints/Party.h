@@ -14,8 +14,6 @@
 @interface Party : NSManagedObject
 
 @property (nonatomic, retain) NSDate * endTime;
-@property (nonatomic, retain) NSString * gamesList;
-@property (nonatomic, retain) NSString * guestList;
 @property (nonatomic, retain) NSData * icon;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * startTime;

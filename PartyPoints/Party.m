@@ -15,8 +15,6 @@
 @implementation Party
 
 @dynamic endTime;
-@dynamic gamesList;
-@dynamic guestList;
 @dynamic icon;
 @dynamic name;
 @dynamic startTime;
