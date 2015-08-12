@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     
     self.textField.delegate = self;
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +54,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     
+
     if (self.party) {
         self.party.name = self.textField.text;
     } else {
@@ -67,6 +66,23 @@
     
     viewController.party = self.party;
     
+    
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    identifier = @"nameToIcon";
+    
+    if (self.textField.text.length == 0) {
+        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Alert!"message:@"Your party must have a name." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        
+        [alert show];
+        return NO;
+        
+    } else {
+        return YES;
+    }
     
 }
 

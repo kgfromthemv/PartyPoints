@@ -33,7 +33,7 @@ static NSString *guestName = @"guestName";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,17 +42,29 @@ static NSString *guestName = @"guestName";
 }
 - (IBAction)addGuest:(id)sender {
     
-    NSMutableArray *list = [NSMutableArray arrayWithArray:self.guestList];
+//    NSMutableArray *list = [NSMutableArray arrayWithArray:self.guestList];
     NSString *name = self.guestName.text;
     
-    Guest *guest = self.guest;
-    guest.name = name;
+    self.guest.name = name;
+    
+    Guest *guest = [GuestController guestWithGuest:self.guest];
+    
+    self.guestList = [self updateArrayWithGuest:guest];
+    
+    self.guestName.text = nil;
+    [self.tableView reloadData];
+    
+    
+}
 
+- (NSArray *)updateArrayWithGuest:(Guest *)guest {
+    
+    NSMutableArray *list = [NSMutableArray new];
+    
+    [list addObjectsFromArray:self.guestList];
     [list addObject:guest];
     
-    self.guestList = list;
-    
-    [self.tableView reloadData];
+    return list;
     
 }
 
@@ -65,14 +77,14 @@ static NSString *guestName = @"guestName";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     // Return the number of sections.
     
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     // Return the number of rows in the section.
     return self.guestList.count;
 }
@@ -83,7 +95,7 @@ static NSString *guestName = @"guestName";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell];
     
     self.guest  = self.guestList[indexPath.row];
-
+    
     cell.textLabel.text = self.guest.name;
     
     return cell;
@@ -106,23 +118,23 @@ static NSString *guestName = @"guestName";
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark - Navigation

@@ -32,4 +32,12 @@
     return guest;
 }
 
++ (Guest *)guestWithGuest:(Guest *)guest {
+    
+    Guest *guestCopy = guest;
+    
+    return guestCopy;
+    
+}
+
 @end
