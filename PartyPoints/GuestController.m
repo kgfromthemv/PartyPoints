@@ -25,19 +25,10 @@
     Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
     guest.name = name;
-    //guest.parties = party;
-
-
+    [guest addPartiesObject:party];
     
     return guest;
 }
 
-+ (Guest *)guestWithGuest:(Guest *)guest {
-    
-    Guest *guestCopy = guest;
-    
-    return guestCopy;
-    
-}
 
 @end

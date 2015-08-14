@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Game.h"
 
 @interface GamesController : NSObject
+
++ (GamesController *)sharedInstance;
++ (Game *)createGameWithName:(NSString *)name withPoints:(NSNumber *)points andParty:(Party *)party;
 
 @end

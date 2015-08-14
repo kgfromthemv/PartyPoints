@@ -7,6 +7,7 @@
 //
 
 #import "PPPartyListTableViewController.h"
+#import "Stack.h"
 
 @interface PPPartyListTableViewController ()
 
@@ -27,6 +28,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)addParty:(id)sender {
+    
+    [[Stack sharedInstance] resetManagedObjectContext];
+    
 }
 
 #pragma mark - Table view data source

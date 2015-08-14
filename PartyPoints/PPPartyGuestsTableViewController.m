@@ -7,6 +7,7 @@
 //
 
 #import "PPPartyGuestsTableViewController.h"
+#import "PPPartyGamesTableViewController.h"
 
 static NSString *tableViewCell = @"guestTableViewCell";
 static NSString *guestName = @"guestName";
@@ -27,7 +28,6 @@ static NSString *guestName = @"guestName";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.guest = [GuestController createGuestWithName:nil andParty:self.party];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,31 +42,31 @@ static NSString *guestName = @"guestName";
 }
 - (IBAction)addGuest:(id)sender {
     
-//    NSMutableArray *list = [NSMutableArray arrayWithArray:self.guestList];
-    NSString *name = self.guestName.text;
-    
-    self.guest.name = name;
-    
-    Guest *guest = [GuestController guestWithGuest:self.guest];
-    
-    self.guestList = [self updateArrayWithGuest:guest];
-    
-    self.guestName.text = nil;
-    [self.tableView reloadData];
-    
+    if (self.guestName.text.length == 0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Alert!" message:@"I'm sure your guests all have names right? Name your guest!" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        
+        [alert show];
+        
+    } else {
+        
+        NSString *name = self.guestName.text;
+        
+        //Creating guest and saving it to CoreData.
+        [GuestController createGuestWithName:name andParty:self.party];
+        
+        //Create array, and add name string to array.
+        NSMutableArray *list = [NSMutableArray arrayWithArray:self.guestList];
+        
+        [list addObject:name];
+        
+        self.guestList = list;
+        
+        [self.tableView reloadData];
+        self.guestName.text = nil;
+    }
     
 }
 
-- (NSArray *)updateArrayWithGuest:(Guest *)guest {
-    
-    NSMutableArray *list = [NSMutableArray new];
-    
-    [list addObjectsFromArray:self.guestList];
-    [list addObject:guest];
-    
-    return list;
-    
-}
 
 #pragma mark - Table view data source and delegate
 
@@ -94,13 +94,9 @@ static NSString *guestName = @"guestName";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell];
     
-    self.guest  = self.guestList[indexPath.row];
-    
-    cell.textLabel.text = self.guest.name;
-    
+    cell.textLabel.text = self.guestList[indexPath.row];
     return cell;
 }
-
 
 
 // Override to support conditional editing of the table view.
@@ -143,6 +139,11 @@ static NSString *guestName = @"guestName";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    PPPartyGamesTableViewController *viewController = segue.destinationViewController;
+    
+    viewController.party = self.party;
+    
 }
 
 

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Guest.h"
+#import "Party.h"
 
 @interface GuestController : NSObject
 
 + (GuestController *)sharedInstance;
 + (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party;
-+ (Guest *)guestWithGuest:(Guest *)guest;
 
 
 

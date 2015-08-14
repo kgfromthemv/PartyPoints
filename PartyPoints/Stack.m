@@ -73,4 +73,10 @@
     [self.managedObjectContext reset];
 }
 
+- (void)saveManagedObjectContext {
+    
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    
+}
 @end

@@ -13,6 +13,7 @@
 
 + (Stack *)sharedInstance;
 - (void)resetManagedObjectContext;
+- (void)saveManagedObjectContext;
 
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;

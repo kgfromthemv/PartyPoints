@@ -8,6 +8,7 @@
 
 #import "PPPartyNameViewController.h"
 #import "PPPartyIconViewController.h"
+#import "Stack.h"
 
 @interface PPPartyNameViewController ()
 

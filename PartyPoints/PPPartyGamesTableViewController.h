@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PartyController.h"
+#import "GamesController.h"
 
-@interface PPPartyGamesTableViewController : UITableViewController
+@interface PPPartyGamesTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) Party *party;
 
