@@ -19,7 +19,6 @@
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSSet *games;
 @property (nonatomic, retain) NSSet *guests;
-@property (nonatomic, retain) Icon *icons;
 @end
 
 @interface Party (CoreDataGeneratedAccessors)

@@ -26,12 +26,10 @@
     
     game.name = name;
     game.points = points;
-
     [game addPartiesObject:party];
+    [[Stack sharedInstance] saveManagedObjectContext];
     
     return game;
-    
-    
 }
 
 - (NSArray *)games {
@@ -43,5 +41,26 @@
     return fetchedGames;
     
 }
+
+- (NSArray *)games:(NSArray *)games WithParty:(Party *)party {
+    
+    NSMutableArray *gamesList = [NSMutableArray new];
+    
+    for (Game *game in games) {
+        
+        for (Party *gameParty in game.parties) {
+            
+            if (gameParty == party) {
+            
+                [gamesList addObject:game]; 
+                
+            }
+            
+        }
+        
+    }
+    return gamesList;
+}
+
 
 @end

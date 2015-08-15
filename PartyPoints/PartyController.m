@@ -28,7 +28,26 @@
     
     party.name = name;
     
+    [[Stack sharedInstance] saveManagedObjectContext];
+    
     return party;
+    
+}
+
+- (NSArray *)parties {
+    
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Party"];
+    
+    NSArray *fetchedParties = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetch error:nil];
+    
+    return fetchedParties;
+    
+}
+
+- (void)deleteParty:(Party *)party {
+    
+    [party.managedObjectContext deleteObject:party];
+    [[Stack sharedInstance] saveManagedObjectContext];
     
 }
 

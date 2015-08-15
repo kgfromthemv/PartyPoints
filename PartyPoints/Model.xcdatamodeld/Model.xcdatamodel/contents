@@ -10,10 +10,6 @@
         <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Party" inverseName="guests" inverseEntity="Party" syncable="YES"/>
     </entity>
-    <entity name="Icon" representedClassName="Icon" syncable="YES">
-        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Party" inverseName="icons" inverseEntity="Party" syncable="YES"/>
-    </entity>
     <entity name="Party" representedClassName="Party" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -21,7 +17,6 @@
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="parties" inverseEntity="Game" syncable="YES"/>
         <relationship name="guests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Guest" inverseName="parties" inverseEntity="Guest" syncable="YES"/>
-        <relationship name="icons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Icon" inverseName="parties" inverseEntity="Icon" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,8 +26,7 @@
     <elements>
         <element name="Game" positionX="-36" positionY="45" width="128" height="90"/>
         <element name="Guest" positionX="-54" positionY="36" width="128" height="90"/>
-        <element name="Icon" positionX="-45" positionY="54" width="128" height="75"/>
-        <element name="Party" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Party" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="User" positionX="-18" positionY="54" width="128" height="90"/>
     </elements>
 </model>

@@ -19,7 +19,6 @@
 		27979FA71B743CC500A07187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27979FA61B743CC500A07187 /* Images.xcassets */; };
 		27AB463D1B641052000CAC3F /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB462C1B641052000CAC3F /* Game.m */; };
 		27AB463E1B641052000CAC3F /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB462D1B641052000CAC3F /* Guest.m */; };
-		27AB463F1B641052000CAC3F /* Icon.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB462E1B641052000CAC3F /* Icon.m */; };
 		27AB46401B641052000CAC3F /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB462F1B641052000CAC3F /* Party.m */; };
 		27AB46411B641052000CAC3F /* PPCreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB46301B641052000CAC3F /* PPCreatePartyViewController.m */; };
 		27AB46421B641052000CAC3F /* PPEditPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AB46311B641052000CAC3F /* PPEditPartyTableViewController.m */; };
@@ -70,7 +69,6 @@
 		27979FA61B743CC500A07187 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27AB461D1B641052000CAC3F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		27AB461E1B641052000CAC3F /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
-		27AB461F1B641052000CAC3F /* Icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Icon.h; sourceTree = "<group>"; };
 		27AB46201B641052000CAC3F /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
 		27AB46211B641052000CAC3F /* PPCreatePartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCreatePartyViewController.h; sourceTree = "<group>"; };
 		27AB46221B641052000CAC3F /* PPEditPartyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPEditPartyTableViewController.h; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		27AB462B1B641052000CAC3F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		27AB462C1B641052000CAC3F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		27AB462D1B641052000CAC3F /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
-		27AB462E1B641052000CAC3F /* Icon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Icon.m; sourceTree = "<group>"; };
 		27AB462F1B641052000CAC3F /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Party.m; sourceTree = "<group>"; };
 		27AB46301B641052000CAC3F /* PPCreatePartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCreatePartyViewController.m; sourceTree = "<group>"; };
 		27AB46311B641052000CAC3F /* PPEditPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPEditPartyTableViewController.m; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 				27AB462C1B641052000CAC3F /* Game.m */,
 				27AB461E1B641052000CAC3F /* Guest.h */,
 				27AB462D1B641052000CAC3F /* Guest.m */,
-				27AB461F1B641052000CAC3F /* Icon.h */,
-				27AB462E1B641052000CAC3F /* Icon.m */,
 				27AB46201B641052000CAC3F /* Party.h */,
 				27AB462F1B641052000CAC3F /* Party.m */,
 				27AB462B1B641052000CAC3F /* User.h */,
@@ -389,7 +384,6 @@
 				27AB464A1B641052000CAC3F /* Stack.m in Sources */,
 				27AB46541B6841DE000CAC3F /* PartyController.m in Sources */,
 				27AB46461B641052000CAC3F /* PPPartyDateViewController.m in Sources */,
-				27AB463F1B641052000CAC3F /* Icon.m in Sources */,
 				27AB463E1B641052000CAC3F /* Guest.m in Sources */,
 				27AB46481B641052000CAC3F /* PPPartyNameViewController.m in Sources */,
 				277F79981B589B3E00AD1955 /* main.m in Sources */,

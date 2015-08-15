@@ -42,5 +42,26 @@
     
 }
 
+- (NSArray *)guests:(NSArray *)guests WithParty:(Party *)party {
+    
+    NSMutableArray *guestsList = [NSMutableArray new];
+    
+    for (Guest *guest in guests) {
+        
+        for (Party *guestParty in guest.parties) {
+            
+            if (guestParty == party) {
+                
+                [guestsList addObject:guest];
+                
+            }
+            
+        }
+        
+    }
+    return guestsList;
+    
+}
+
 
 @end

@@ -14,4 +14,7 @@
 + (PartyController *)sharedInstance;
 + (Party *)createPartyWithName:(NSString *)name;
 
+- (NSArray *)parties;
+- (void)deleteParty:(Party *)party;
+
 @end

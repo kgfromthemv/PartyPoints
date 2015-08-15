@@ -15,5 +15,6 @@
 
 + (GamesController *)sharedInstance;
 + (Game *)createGameWithName:(NSString *)name withPoints:(NSNumber *)points andParty:(Party *)party;
+- (NSArray *)games:(NSArray *)games WithParty:(Party *)party;
 
 @end

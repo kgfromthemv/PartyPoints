@@ -30,6 +30,8 @@ static NSString *guestName = @"guestName";
     
     self.guestName.delegate = self;
     
+    [self createGuestList];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -41,6 +43,9 @@ static NSString *guestName = @"guestName";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - creating guest objects
+
 - (IBAction)addGuest:(id)sender {
     
     if (self.guestName.text.length == 0) {
@@ -55,9 +60,20 @@ static NSString *guestName = @"guestName";
         //Creating guest and saving it to CoreData.
         [GuestController createGuestWithName:name andParty:self.party];
         
+        [self createGuestList];
         [self.tableView reloadData];
         self.guestName.text = nil;
     }
+    
+}
+
+- (void)createGuestList {
+    
+    NSArray *guests = [GuestController sharedInstance].guests;
+    
+    NSArray *guestsWithParty = [[GuestController sharedInstance] guests:guests WithParty:self.party];
+    
+    self.guestList = guestsWithParty;
     
 }
 
@@ -82,7 +98,7 @@ static NSString *guestName = @"guestName";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return [GuestController sharedInstance].guests.count;
+    return self.guestList.count;
 }
 
 
@@ -90,13 +106,10 @@ static NSString *guestName = @"guestName";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell];
     
-    NSArray *guests = [GuestController sharedInstance].guests;
+    Guest *guest = self.guestList[indexPath.row];
     
-    for (Guest *guest in guests) {
-        
-        cell.textLabel.text = guest.name;
-        
-    }
+    cell.textLabel.text = guest.name;
+    
     return cell;
 }
 

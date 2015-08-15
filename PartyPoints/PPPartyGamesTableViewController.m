@@ -16,7 +16,6 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 
 @interface PPPartyGamesTableViewController ()
 @property NSArray *gamesList;
-@property NSArray *pointsList;
 @property Game *game;
 @property (weak, nonatomic) IBOutlet UITextField *gameName;
 @property (weak, nonatomic) IBOutlet UITextField *gamePoints;
@@ -44,6 +43,8 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     [singleTap setNumberOfTapsRequired:1];
     [singleTap setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:singleTap];
+    
+    [self createGameList];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -80,6 +81,9 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     NSArray *newViewControllerStack = @[partyListTable, partyTable];
     [self.navigationController setViewControllers:newViewControllerStack animated:YES];
 }
+
+#pragma mark - creating game objects
+
 - (IBAction)addGame:(id)sender {
     
     if (self.gameName.text.length == 0) {
@@ -89,28 +93,31 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     } else {
         
         NSString *gameName = self.gameName.text;
-        NSString *gamePointsAsString = self.gamePoints.text;
         NSInteger gamePoints = [self.gamePoints.text integerValue];
         
         [GamesController createGameWithName:gameName withPoints:[NSNumber numberWithInteger:gamePoints] andParty:self.party];
         
-        NSMutableArray *games = [NSMutableArray arrayWithArray:self.gamesList];
+        [self createGameList];
         
-        NSMutableArray *points = [NSMutableArray arrayWithArray:self.pointsList];
-        
-        [games addObject:gameName];
-        [points addObject:gamePointsAsString];
-        
-        self.gamesList = games;
-        self.pointsList = points;
-        
+
+        [self createGameList];
         [self.tableView reloadData];
-        
+
         self.gameName.text = nil;
         self.gamePoints.text = @"0";
-        
+
         self.pointsStepper.value = [self.gamePoints.text integerValue];
     }
+}
+
+- (void)createGameList {
+    
+    NSArray *games = [GamesController sharedInstance].games;
+    
+    NSArray *gamesWithParty = [[GamesController sharedInstance] games:games WithParty:self.party];
+    
+    self.gamesList = gamesWithParty;
+    
 }
 
 #pragma mark - UITextField delegate, and stepper method
@@ -173,8 +180,10 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:gamesTableViewCell forIndexPath:indexPath];
     
-    cell.textLabel.text = self.gamesList[indexPath.row];
-    cell.detailTextLabel.text = self.pointsList[indexPath.row];
+    Game *game = self.gamesList[indexPath.row];
+    
+    cell.textLabel.text = game.name;
+    cell.detailTextLabel.text = [game.points stringValue];
     
     return cell;
 }
@@ -221,6 +230,11 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    PPPartyTableViewController *viewController = segue.destinationViewController;
+    
+    viewController.party = self.party;
+    
 }
 
 

@@ -20,6 +20,6 @@
 @dynamic startTime;
 @dynamic games;
 @dynamic guests;
-@dynamic icons;
+
 
 @end

@@ -16,6 +16,7 @@
 
 + (GuestController *)sharedInstance;
 + (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party;
+- (NSArray *)guests:(NSArray *)guests WithParty:(Party *)party;
 
 
 
