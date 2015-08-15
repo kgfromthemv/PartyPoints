@@ -34,4 +34,14 @@
     
 }
 
+- (NSArray *)games {
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
+    
+    NSArray *fetchedGames = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    return fetchedGames;
+    
+}
+
 @end

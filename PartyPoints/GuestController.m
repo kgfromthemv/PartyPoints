@@ -27,7 +27,19 @@
     guest.name = name;
     [guest addPartiesObject:party];
     
+    [[Stack sharedInstance] saveManagedObjectContext];
+    
     return guest;
+}
+
+- (NSArray *)guests {
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Guest"];
+    
+    NSArray *fetchedGuests = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    
+    return fetchedGuests;
+    
 }
 
 

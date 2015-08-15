@@ -11,6 +11,8 @@
 
 @interface GamesController : NSObject
 
+@property (strong, nonatomic, readonly) NSArray *games;
+
 + (GamesController *)sharedInstance;
 + (Game *)createGameWithName:(NSString *)name withPoints:(NSNumber *)points andParty:(Party *)party;
 

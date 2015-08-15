@@ -36,6 +36,7 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     self.tableView.dataSource = self;
     
     self.gamePoints.delegate = self;
+    self.gameName.delegate = self;
     
     self.pointsStepper.value = [self.gamePoints.text integerValue];
     
@@ -146,8 +147,6 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     [self.currentResponder resignFirstResponder];
 }
 
-#pragma mark - Table view data source and delegate
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [self.gameName resignFirstResponder];
@@ -155,6 +154,7 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     return YES;
 }
 
+#pragma mark - Table view data source and delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     

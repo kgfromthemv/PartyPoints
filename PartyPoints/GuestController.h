@@ -12,6 +12,8 @@
 
 @interface GuestController : NSObject
 
+@property (strong, nonatomic, readonly) NSArray *guests;
+
 + (GuestController *)sharedInstance;
 + (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party;
 

@@ -10,7 +10,7 @@
 #import "PartyController.h"
 #import "GuestController.h"
 
-@interface PPPartyGuestsTableViewController : UITableViewController
+@interface PPPartyGuestsTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) Party *party;
 
