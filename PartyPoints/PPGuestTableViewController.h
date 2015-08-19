@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GuestController.h"
 
 @interface PPGuestTableViewController : UITableViewController
+
+@property (nonatomic, strong) Guest *guest;
 
 @end

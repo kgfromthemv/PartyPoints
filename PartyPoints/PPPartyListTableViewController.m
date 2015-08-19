@@ -94,10 +94,9 @@ static NSString *partyListCell = @"partyListCell";
         [[PartyController sharedInstance] deleteParty:party];
         
         [self updatePartyList];
-        [self.tableView reloadData];
-        
-        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   

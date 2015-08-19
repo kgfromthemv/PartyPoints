@@ -83,7 +83,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DOT-MG-wIY">
                                 <rect key="frame" x="206" y="263" width="188" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="4sT-hJ-vt6"/>
+                                    <constraint firstAttribute="width" constant="188" id="62x-5k-hcJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -91,18 +91,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWz-Iw-dCH">
                                 <rect key="frame" x="187" y="342" width="227" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="227" id="McD-Bx-kMb"/>
-                                    <constraint firstAttribute="height" constant="30" id="Qco-dq-OTB"/>
+                                    <constraint firstAttribute="width" constant="227" id="Aau-yG-8pV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Import your Party from Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibM-tc-rq0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibM-tc-rq0">
                                 <rect key="frame" x="292" y="313" width="16" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5Wf-MR-rXG"/>
+                                    <constraint firstAttribute="height" constant="21" id="8bk-h8-j1F"/>
+                                    <constraint firstAttribute="width" constant="16" id="CPC-vV-CkM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,8 +111,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What should your party be called?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGw-7B-SgZ">
                                 <rect key="frame" x="148" y="194" width="305" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="9G0-nn-JuJ"/>
-                                    <constraint firstAttribute="width" constant="305" id="w2M-9w-ppZ"/>
+                                    <constraint firstAttribute="width" constant="305" id="2ym-1s-Akb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,14 +120,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MWz-Iw-dCH" firstAttribute="centerX" secondItem="NDj-ov-W2d" secondAttribute="centerX" id="DPf-4v-LXn"/>
-                            <constraint firstItem="ibM-tc-rq0" firstAttribute="centerX" secondItem="DOT-MG-wIY" secondAttribute="centerX" id="DTO-XN-5Tc"/>
-                            <constraint firstItem="MWz-Iw-dCH" firstAttribute="centerX" secondItem="ibM-tc-rq0" secondAttribute="centerX" id="LU0-Ag-UDf"/>
-                            <constraint firstItem="MWz-Iw-dCH" firstAttribute="top" secondItem="ibM-tc-rq0" secondAttribute="bottom" constant="8" symbolic="YES" id="PSd-59-zj8"/>
-                            <constraint firstItem="ibM-tc-rq0" firstAttribute="top" secondItem="DOT-MG-wIY" secondAttribute="bottom" constant="20" id="bTt-uF-Dqd"/>
-                            <constraint firstItem="DOT-MG-wIY" firstAttribute="top" secondItem="WGw-7B-SgZ" secondAttribute="bottom" constant="48" id="fze-iZ-bTU"/>
-                            <constraint firstItem="DOT-MG-wIY" firstAttribute="centerY" secondItem="NDj-ov-W2d" secondAttribute="centerY" id="ixT-Dy-rf9"/>
-                            <constraint firstItem="DOT-MG-wIY" firstAttribute="centerX" secondItem="WGw-7B-SgZ" secondAttribute="centerX" id="w6B-46-zQj"/>
+                            <constraint firstItem="MWz-Iw-dCH" firstAttribute="top" secondItem="ibM-tc-rq0" secondAttribute="bottom" constant="8" symbolic="YES" id="0oj-QA-guh"/>
+                            <constraint firstItem="DOT-MG-wIY" firstAttribute="top" secondItem="WGw-7B-SgZ" secondAttribute="bottom" constant="48" id="8AI-Az-fcJ"/>
+                            <constraint firstItem="ibM-tc-rq0" firstAttribute="centerX" secondItem="NDj-ov-W2d" secondAttribute="centerX" id="WgP-fU-Wet"/>
+                            <constraint firstItem="WGw-7B-SgZ" firstAttribute="top" secondItem="MBC-DE-e8l" secondAttribute="bottom" constant="130" id="Ybc-Xa-SRG"/>
+                            <constraint firstItem="DOT-MG-wIY" firstAttribute="centerX" secondItem="WGw-7B-SgZ" secondAttribute="centerX" id="fMn-eM-xnc"/>
+                            <constraint firstItem="ibM-tc-rq0" firstAttribute="centerX" secondItem="MWz-Iw-dCH" secondAttribute="centerX" id="fRb-m7-Eeo"/>
+                            <constraint firstItem="uBH-nN-2nD" firstAttribute="top" secondItem="MWz-Iw-dCH" secondAttribute="bottom" constant="184" id="k7v-lW-93O"/>
+                            <constraint firstItem="DOT-MG-wIY" firstAttribute="centerY" secondItem="NDj-ov-W2d" secondAttribute="centerY" id="pjI-VL-fxp"/>
+                            <constraint firstItem="DOT-MG-wIY" firstAttribute="centerX" secondItem="ibM-tc-rq0" secondAttribute="centerX" id="w8z-Xa-A9b"/>
+                            <constraint firstItem="ibM-tc-rq0" firstAttribute="top" secondItem="DOT-MG-wIY" secondAttribute="bottom" constant="20" id="xHE-mb-vqG"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -256,6 +257,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nkq-fo-Vbf">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="kd8-Of-ciW"/>
+                                <barButtonItem title="Save" systemItem="save" id="4Jt-1v-JTT">
+                                    <connections>
+                                        <action selector="savePoints:" destination="dfR-aE-W5g" id="czn-pY-oLM"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="guestViewCell" id="TLG-MP-ymi">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -272,7 +285,6 @@
                     <toolbarItems>
                         <barButtonItem systemItem="save" id="5sO-e6-SwO"/>
                     </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caf-Ic-HBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,7 +385,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-Zc-hMk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-Zc-hMk">
                                 <rect key="frame" x="-3" y="64" width="606" height="434"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -420,15 +432,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="leading" secondItem="9L8-ca-vVF" secondAttribute="leadingMargin" constant="-19" id="1Pf-IB-7TA"/>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="leading" secondItem="psI-Su-kGT" secondAttribute="leading" id="3Rh-Dw-oWQ"/>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="centerY" secondItem="9L8-ca-vVF" secondAttribute="centerY" id="NrZ-WL-K06"/>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="top" secondItem="psI-Su-kGT" secondAttribute="top" id="O9B-Kh-A8r"/>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="centerX" secondItem="9L8-ca-vVF" secondAttribute="centerX" id="WHq-vv-JkC"/>
-                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="trailing" secondItem="psI-Su-kGT" secondAttribute="trailing" id="bSy-xe-GCQ"/>
-                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="top" secondItem="LwL-Lt-qaM" secondAttribute="bottom" id="ua3-mO-GZ5"/>
-                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="leading" secondItem="psI-Su-kGT" secondAttribute="leading" id="vZ3-Lv-lzc"/>
-                            <constraint firstItem="ma8-gK-0f9" firstAttribute="trailing" secondItem="psI-Su-kGT" secondAttribute="trailing" id="wuQ-CZ-xNd"/>
+                            <constraint firstItem="psI-Su-kGT" firstAttribute="leading" secondItem="9L8-ca-vVF" secondAttribute="leadingMargin" constant="-19" id="3dN-d5-cBi"/>
+                            <constraint firstItem="ma8-gK-0f9" firstAttribute="leading" secondItem="psI-Su-kGT" secondAttribute="leading" id="7KL-yh-Ncz"/>
+                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="trailing" secondItem="ma8-gK-0f9" secondAttribute="trailing" id="Boi-R3-2hR"/>
+                            <constraint firstItem="ma8-gK-0f9" firstAttribute="centerY" secondItem="9L8-ca-vVF" secondAttribute="centerY" id="OoD-fN-5wn"/>
+                            <constraint firstItem="psI-Su-kGT" firstAttribute="centerX" secondItem="9L8-ca-vVF" secondAttribute="centerX" id="Q5g-Jh-NZY"/>
+                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="leading" secondItem="ma8-gK-0f9" secondAttribute="leading" id="VG7-TN-zta"/>
+                            <constraint firstItem="bmE-Zc-hMk" firstAttribute="top" secondItem="LwL-Lt-qaM" secondAttribute="bottom" id="ZIe-SE-aJR"/>
+                            <constraint firstItem="9w8-r2-bzk" firstAttribute="top" secondItem="bmE-Zc-hMk" secondAttribute="bottom" constant="58" id="lB0-fr-GHG"/>
+                            <constraint firstItem="psI-Su-kGT" firstAttribute="top" secondItem="ma8-gK-0f9" secondAttribute="top" id="sBO-Ks-Gwx"/>
+                            <constraint firstItem="psI-Su-kGT" firstAttribute="trailing" secondItem="ma8-gK-0f9" secondAttribute="trailing" id="swA-Vy-Mn1"/>
                         </constraints>
                     </view>
                     <toolbarItems>
