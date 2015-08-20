@@ -63,5 +63,13 @@
     
 }
 
+- (void)deleteGuest:(Guest *)guest {
+    
+    [guest.managedObjectContext deleteObject:guest];
+    [[Stack sharedInstance] saveManagedObjectContext];
+    
+}
+
+
 
 @end

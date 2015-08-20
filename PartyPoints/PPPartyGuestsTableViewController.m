@@ -30,7 +30,7 @@ static NSString *guestName = @"guestName";
     
     self.guestName.delegate = self;
     
-    [self createGuestList];
+    [self updateGuestList];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -60,14 +60,14 @@ static NSString *guestName = @"guestName";
         //Creating guest and saving it to CoreData.
         [GuestController createGuestWithName:name andParty:self.party];
         
-        [self createGuestList];
+        [self updateGuestList];
         [self.tableView reloadData];
         self.guestName.text = nil;
     }
     
 }
 
-- (void)createGuestList {
+- (void)updateGuestList {
     
     NSArray *guests = [GuestController sharedInstance].guests;
     
@@ -126,6 +126,13 @@ static NSString *guestName = @"guestName";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        Guest *guest = self.guestList[indexPath.row];
+        
+        [[GuestController sharedInstance] deleteGuest:guest];
+        
+        [self updateGuestList];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -133,19 +140,19 @@ static NSString *guestName = @"guestName";
 }
 
 
-/*
+
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
  }
- */
 
-/*
+
+
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
- */
+
 
 
 #pragma mark - Navigation

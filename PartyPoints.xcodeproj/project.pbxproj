@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270A88551B841F70004DE106 /* IconCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 270A88541B841F70004DE106 /* IconCollectionViewCell.m */; };
 		271B18E21B61E98600395FC2 /* PPPartyIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271B18E01B61E98600395FC2 /* PPPartyIconViewController.m */; };
 		272800581B71968D00CF784F /* PPPartyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272800571B71968D00CF784F /* PPPartyListTableViewController.m */; };
 		277F79981B589B3E00AD1955 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F79971B589B3E00AD1955 /* main.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		270A88531B841F70004DE106 /* IconCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconCollectionViewCell.h; sourceTree = "<group>"; };
+		270A88541B841F70004DE106 /* IconCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconCollectionViewCell.m; sourceTree = "<group>"; };
 		271B18DE1B61E98600395FC2 /* PPPartyIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPartyIconViewController.h; path = PartyPointsTests/PPPartyIconViewController.h; sourceTree = SOURCE_ROOT; };
 		271B18E01B61E98600395FC2 /* PPPartyIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPartyIconViewController.m; path = PartyPointsTests/PPPartyIconViewController.m; sourceTree = SOURCE_ROOT; };
 		272800561B71968D00CF784F /* PPPartyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyListTableViewController.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				27AB46371B641052000CAC3F /* PPPartyNameViewController.m */,
 				271B18DE1B61E98600395FC2 /* PPPartyIconViewController.h */,
 				271B18E01B61E98600395FC2 /* PPPartyIconViewController.m */,
+				270A88531B841F70004DE106 /* IconCollectionViewCell.h */,
+				270A88541B841F70004DE106 /* IconCollectionViewCell.m */,
 				27AB46261B641052000CAC3F /* PPPartyDateViewController.h */,
 				27AB46351B641052000CAC3F /* PPPartyDateViewController.m */,
 				27979F9D1B74317700A07187 /* PPPartyGuestsTableViewController.h */,
@@ -371,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270A88551B841F70004DE106 /* IconCollectionViewCell.m in Sources */,
 				27AB464B1B641052000CAC3F /* User.m in Sources */,
 				27AB46441B641052000CAC3F /* PPHomeViewController.m in Sources */,
 				27AB46421B641052000CAC3F /* PPEditPartyTableViewController.m in Sources */,

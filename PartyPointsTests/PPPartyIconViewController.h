@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PartyController.h"
 
-@interface PPPartyIconViewController : UIViewController
+@interface PPPartyIconViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) Party *party;
 

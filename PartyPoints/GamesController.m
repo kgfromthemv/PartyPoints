@@ -63,4 +63,12 @@
 }
 
 
+- (void)deleteGame:(Game *)game {
+    
+    [game.managedObjectContext deleteObject:game];
+    [[Stack sharedInstance] saveManagedObjectContext];
+    
+}
+
+
 @end

@@ -8,10 +8,15 @@
 
 #import "PPPartyIconViewController.h"
 #import "PPPartyDateViewController.h"
+#import "IconCollectionViewCell.h"
 
+static NSString *iconViewCell = @"iconViewCell";
 
 @interface PPPartyIconViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UICollectionView *iconCollectionView;
+
+@property (strong, nonatomic) NSArray *iconList;
 
 @end
 
@@ -19,6 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.iconCollectionView.dataSource = self;
+    self.iconCollectionView.delegate = self;
+    
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -37,6 +49,51 @@
     
     return self.party;
     
+    
+}
+
+- (NSArray *)iconList {
+    
+    NSMutableArray *icons = [NSMutableArray new];
+    
+    for (int i = 0; i <= 79; i++) {
+        
+        [icons addObject:[UIImage imageNamed:[NSString stringWithFormat:@"partyicon%d",i]]];
+
+    }
+    
+    return icons;
+    
+}
+
+
+#pragma mark - UICollectionView data source and delegate
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    IconCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:iconViewCell forIndexPath:indexPath];
+    
+    cell.imageView.image = self.iconList[indexPath.row];
+    
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return self.iconList.count;
+    
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    return 1;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.icon.image = self.iconList[indexPath.row];
+    
+    [self.icon reloadInputViews];
     
 }
 

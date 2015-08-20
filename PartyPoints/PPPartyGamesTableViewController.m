@@ -21,8 +21,6 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 @property (weak, nonatomic) IBOutlet UITextField *gamePoints;
 @property (weak, nonatomic) IBOutlet UIStepper *pointsStepper;
 
-@property (nonatomic, assign) id currentResponder;
-
 
 @end
 
@@ -37,14 +35,7 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
     self.gamePoints.delegate = self;
     self.gameName.delegate = self;
     
-    self.pointsStepper.value = [self.gamePoints.text integerValue];
-    
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resignOnTap:)];
-    [singleTap setNumberOfTapsRequired:1];
-    [singleTap setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:singleTap];
-    
-    [self createGameList];
+    [self updateGameList];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -97,20 +88,22 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
         
         [GamesController createGameWithName:gameName withPoints:[NSNumber numberWithInteger:gamePoints] andParty:self.party];
         
-        [self createGameList];
+        [self updateGameList];
         
-
-        [self createGameList];
+        
+        [self updateGameList];
         [self.tableView reloadData];
-
+        
         self.gameName.text = nil;
         self.gamePoints.text = @"0";
-
+        
         self.pointsStepper.value = [self.gamePoints.text integerValue];
+        
+        [self.view endEditing:YES];
     }
 }
 
-- (void)createGameList {
+- (void) updateGameList {
     
     NSArray *games = [GamesController sharedInstance].games;
     
@@ -122,36 +115,27 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 
 #pragma mark - UITextField delegate, and stepper method
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
-    self.currentResponder = textField;
-    
-    self.pointsStepper.enabled = NO;
-    
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (IBAction)textFieldChanged:(UITextField *)textField {
     
     self.pointsStepper.value = [self.gamePoints.text integerValue];
     
-    self.pointsStepper.enabled = YES;
+    [self updateInputs];
     
 }
 
 - (IBAction)changePoints:(UIStepper *)sender {
+
     
-    //    NSInteger points = [self.gamePoints.text integerValue];
-    
-    NSInteger stepperValue = self.pointsStepper.value;
-    
-    
-    self.gamePoints.text = [@(stepperValue) stringValue];
+    [self updateInputs];
     
 }
 
-- (void)resignOnTap:(id)sender {
+- (void)updateInputs {
     
-    [self.currentResponder resignFirstResponder];
+    NSInteger stepperValue = self.pointsStepper.value;
+    
+    self.gamePoints.text = [@(stepperValue) stringValue];
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -202,6 +186,14 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        Game *game = self.gamesList[indexPath.row];
+        
+        [[GamesController sharedInstance] deleteGame:game];
+        
+        [self updateGameList];
+        
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -209,19 +201,19 @@ static NSString *gamesTableViewCell = @"gamesTableViewCell";
 }
 
 
-/*
+
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
  }
- */
 
-/*
+
+
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
- */
+
 
 
 #pragma mark - Navigation

@@ -330,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What icon should your party have?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK6-Xi-gTB">
-                                <rect key="frame" x="167" y="215" width="267" height="21"/>
+                                <rect key="frame" x="167" y="89" width="267" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="267" id="Hjm-OP-FDX"/>
                                     <constraint firstAttribute="height" constant="21" id="fpR-Cw-a94"/>
@@ -339,19 +339,52 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculator" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-t8-TRc">
-                                <rect key="frame" x="239" y="259" width="123" height="122"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6w-t8-TRc">
+                                <rect key="frame" x="268" y="118" width="65" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="122" id="CNE-1p-vNW"/>
-                                    <constraint firstAttribute="width" constant="123" id="rRc-0P-36s"/>
+                                    <constraint firstAttribute="height" constant="65" id="CNE-1p-vNW"/>
+                                    <constraint firstAttribute="width" constant="65" id="rRc-0P-36s"/>
                                 </constraints>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EgK-0S-qVq">
+                                <rect key="frame" x="0.0" y="191" width="600" height="372"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wjn-QU-Ek8">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iconViewCell" id="Yai-qW-mYT" customClass="IconCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-su-ZmI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="CiO-su-ZmI" id="UCq-9r-2uT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RK6-Xi-gTB" firstAttribute="top" secondItem="zPN-Uu-Alu" secondAttribute="bottom" constant="151" id="Jag-VB-dBU"/>
+                            <constraint firstAttribute="trailing" secondItem="EgK-0S-qVq" secondAttribute="trailing" id="0bW-0O-P3c"/>
+                            <constraint firstItem="RK6-Xi-gTB" firstAttribute="top" secondItem="zPN-Uu-Alu" secondAttribute="bottom" constant="25" id="Jag-VB-dBU"/>
+                            <constraint firstItem="EgK-0S-qVq" firstAttribute="leading" secondItem="PxS-KB-LYl" secondAttribute="leading" id="VQ1-ko-pxB"/>
                             <constraint firstItem="RK6-Xi-gTB" firstAttribute="centerX" secondItem="S6w-t8-TRc" secondAttribute="centerX" id="Za0-Fy-XJh"/>
-                            <constraint firstItem="S6w-t8-TRc" firstAttribute="top" secondItem="RK6-Xi-gTB" secondAttribute="bottom" constant="23" id="io4-M9-Q0k"/>
+                            <constraint firstItem="EgK-0S-qVq" firstAttribute="top" secondItem="S6w-t8-TRc" secondAttribute="bottom" constant="8" id="ZsM-lt-4B1"/>
+                            <constraint firstItem="7MV-F0-Kkp" firstAttribute="top" secondItem="EgK-0S-qVq" secondAttribute="bottom" constant="-7" id="cXU-gY-bSh"/>
+                            <constraint firstItem="S6w-t8-TRc" firstAttribute="top" secondItem="RK6-Xi-gTB" secondAttribute="bottom" constant="8" id="io4-M9-Q0k"/>
                             <constraint firstItem="S6w-t8-TRc" firstAttribute="centerX" secondItem="PxS-KB-LYl" secondAttribute="centerX" id="yNm-Uz-zIb"/>
                         </constraints>
                     </view>
@@ -367,6 +400,7 @@
                     <navigationItem key="navigationItem" title="Icon" id="14Q-Dn-E7a"/>
                     <connections>
                         <outlet property="icon" destination="S6w-t8-TRc" id="SPc-N4-8JB"/>
+                        <outlet property="iconCollectionView" destination="EgK-0S-qVq" id="d2H-mo-X6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCd-5Q-0fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -553,6 +587,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="textFieldChanged:" destination="hz2-ZB-82U" eventType="editingChanged" id="OS1-aH-tW8"/>
+                                        </connections>
                                     </textField>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="LUQ-aY-0H1"/>
@@ -639,7 +676,4 @@
             <point key="canvasLocation" x="1138" y="416"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="calculator" width="512" height="512"/>
-    </resources>
 </document>
