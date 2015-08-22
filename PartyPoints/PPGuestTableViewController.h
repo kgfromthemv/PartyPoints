@@ -12,5 +12,6 @@
 @interface PPGuestTableViewController : UITableViewController
 
 @property (nonatomic, strong) Guest *guest;
+@property (nonatomic, strong) Party *party;
 
 @end

@@ -18,6 +18,7 @@
 + (Guest *)createGuestWithName:(NSString *)name andParty:(Party *)party;
 - (NSArray *)guests:(NSArray *)guests WithParty:(Party *)party;
 - (void)deleteGuest:(Guest *)guest;
+- (void)saveGuest:(Guest *)guest;
 
 
 

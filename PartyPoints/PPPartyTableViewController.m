@@ -9,12 +9,16 @@
 #import "PPPartyTableViewController.h"
 #import "PPGuestTableViewController.h"
 #import "GuestController.h"
+#import "GamesController.h"
 
 static NSString *partyViewCell = @"partyViewCell";
 
 @interface PPPartyTableViewController ()
 
 @property (strong, nonatomic) NSArray *guestList;
+@property (strong, nonatomic) NSArray *gamesList;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *randomWinnerButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -23,16 +27,20 @@ static NSString *partyViewCell = @"partyViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.party.name;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
     [self updateGuestList];
+    [self updateGamesList];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +50,23 @@ static NSString *partyViewCell = @"partyViewCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [self.tableView reloadData];
     
+}
+- (IBAction)segmentedControl:(id)sender {
+    
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.randomWinnerButton.enabled = YES;
+        self.randomWinnerButton.title = @"Pick Winner";
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        self.randomWinnerButton.enabled = NO;
+        self.randomWinnerButton.title = @"";
+    } else {
+        
+    }
+    
+    
+    [self.tableView reloadData];
     
 }
 
@@ -53,6 +77,16 @@ static NSString *partyViewCell = @"partyViewCell";
     NSArray *guestsWithParty = [[GuestController sharedInstance] guests:guests WithParty:self.party];
     
     self.guestList = guestsWithParty;
+    
+}
+
+- (void)updateGamesList {
+    
+    NSArray *games = [GamesController sharedInstance].games;
+    
+    NSArray *gamesWithParty = [[GamesController sharedInstance] games:games WithParty:self.party];
+    
+    self.gamesList = gamesWithParty;
     
 }
 
@@ -67,19 +101,52 @@ static NSString *partyViewCell = @"partyViewCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return self.guestList.count;
+
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        return self.guestList.count;
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        return self.gamesList.count;
+    } else {
+        return 0;
+    }
+    
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.segmentedControl.selectedSegmentIndex == 1) {
+        return nil;
+    } else {
+        return indexPath;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.segmentedControl.selectedSegmentIndex == 1) {
+        return NO;
+    } else {
+        return YES;
+    }
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:partyViewCell forIndexPath:indexPath];
     
-    // Configure the cell...
-    Guest *guest = self.guestList[indexPath.row];
-    
-    cell.textLabel.text = guest.name;
-    cell.detailTextLabel.text = [guest.points stringValue];
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        Guest *guest = self.guestList[indexPath.row];
+        
+        cell.textLabel.text = guest.name;
+        cell.detailTextLabel.text = [guest.points stringValue];
+        
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
+        Game *game = self.gamesList[indexPath.row];
+        
+        cell.textLabel.text = game.name;
+        cell.detailTextLabel.text = [game.points stringValue];
+    }
     
     
     return cell;
@@ -127,8 +194,6 @@ static NSString *partyViewCell = @"partyViewCell";
     return YES;
 }
 
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -136,13 +201,16 @@ static NSString *partyViewCell = @"partyViewCell";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
     if ([segue.identifier isEqualToString:@"guestViewSegue"]) {
         
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        UINavigationController *navigationController = segue.destinationViewController;
         
-        PPGuestTableViewController *viewController = segue.destinationViewController;
+        PPGuestTableViewController *viewController = navigationController.viewControllers[0];
         
         viewController.guest = self.guestList[indexPath.row];
+        viewController.party = self.party;
         
     }
 }

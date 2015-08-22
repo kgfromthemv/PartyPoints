@@ -63,6 +63,12 @@
     
 }
 
+- (void)saveGuest:(Guest *)guest {
+    
+    [guest.managedObjectContext save:nil];
+    
+}
+
 - (void)deleteGuest:(Guest *)guest {
     
     [guest.managedObjectContext deleteObject:guest];

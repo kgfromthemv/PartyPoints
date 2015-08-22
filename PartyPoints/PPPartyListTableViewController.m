@@ -25,11 +25,12 @@ static NSString *partyListCell = @"partyListCell";
     
     [self updatePartyList];
     
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +47,11 @@ static NSString *partyListCell = @"partyListCell";
     
     self.parties = [[PartyController sharedInstance] parties];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    self.title = @"My Parties";
 }
 
 #pragma mark - Table view data source
@@ -126,6 +132,7 @@ static NSString *partyListCell = @"partyListCell";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    self.title = @"";
     
     if ([[segue identifier] isEqualToString:@"viewPartyfromList"]) {
         
